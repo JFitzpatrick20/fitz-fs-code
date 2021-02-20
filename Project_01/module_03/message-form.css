@@ -1,0 +1,43 @@
+body{
+background-color: lightgrey;
+
+}
+.message-form{
+    width: 530px;
+    box-sizing: border-box;
+
+}
+.message-form-inputs{
+    padding: 20px;
+    width: 100%;
+}
+.message-form-actions{
+    background-color: gray;
+    padding: 20px;
+    height: 30px;
+    overflow: auto;
+    width: 100%;
+    
+    
+}
+label{
+    margin: 5px;
+    padding: 5px;
+}
+input{
+    font-style: helvetica, sans-serif;
+    padding: 5px;
+}
+textarea{
+    margin: 5px;
+    padding: 10px;
+    font-style: helvetica, sans-serif;
+}
+button{
+    background-color: cyan;
+    float: right;
+    padding: 5px;
+    margin-right: 10px;
+    border: none;
+    box-shadow: 2px 4px lightgrey;
+}

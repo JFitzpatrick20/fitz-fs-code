@@ -1,0 +1,53 @@
+.user-profile{
+width: 80%;
+box-shadow: 4px 8px slategray;
+position: relative;    
+}
+
+
+.headline{
+    background-color: gray;
+    padding: 5px;
+
+}
+.name{
+    font-size: 30px;
+}
+.location{
+    color: darkgrey;
+    font-size: 20px;
+
+}
+.content{
+    overflow: auto;
+    padding: 5px;   
+    background-color: darkgrey;
+}
+.left{
+    width: 47%;
+    text-align: left;
+    float: left;
+    font-size: 18px;
+
+}
+.right{
+    width: 47%;
+    text-align: left;
+    float: right;
+    font-size: 16px;
+    
+}
+.avatar{
+    position: absolute;
+    top: 35px;
+    right: 25px;
+    border-radius: 50%;
+    height: 70px;
+    width: auto;
+}
+h3{
+    font-size: 24px;
+    border-bottom: 2px;
+    border-bottom-color: black;
+    border-bottom-style: solid;
+}
