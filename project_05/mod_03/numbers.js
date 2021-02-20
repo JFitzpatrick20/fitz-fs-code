@@ -38,10 +38,10 @@ $('.controls button').click(function () {
       
   $('.card-list').on('click', '.card', function () {
     let number = Number($(this).text())
-    VALUES.splice(number, 1)
+    let index = VALUES.indexOf(number)
+    VALUES.splice(index, 1)
     $(this).remove()
-   console.log(number)
-
+  
     draw(VALUES)
   });
 
