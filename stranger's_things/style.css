@@ -1,0 +1,134 @@
+body {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 25% auto 25%;
+  grid-template-rows: 15% 8% auto 10%;
+  background-color: lightskyblue;
+}
+
+#header {
+  grid-column: 1 / span 3;
+  grid-row: 1 / span 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  border: 2px solid black;
+  padding-bottom: 10px;
+  margin: 5px;
+  margin-top: 0%;
+}
+
+.page-title {
+  grid-column: 2 / span 1;
+  justify-self: center;
+}
+#header .decription {
+  grid-column: 1 / span 3;
+  justify-self: center;
+  align-self: center;
+  font-size: 16px;
+}
+
+#side-nav {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  grid-column: 1 / 1;
+  grid-row: 2 / span 2;
+}
+
+#side-nav button {
+  min-width: 70%;
+  min-height: 50px;
+  margin-top: 10px;
+  margin-left: 5px;
+  box-shadow: darkgray 3px 5px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#featured {
+  grid-row: 2 / span 2;
+  grid-column: 2 / span 1;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+#featured h3 {
+  width: 55vw;
+}
+.card {
+  background-color: lightgray;
+  border: 2px solid black;
+  box-shadow: darkgray 5px 3px;
+}
+
+#featured .post-title {
+  display: flex;
+  justify-content: center;
+  font-size: 50px;
+}
+
+#search {
+  grid-row: 2 / span 1;
+  grid-column: 3 / span 1;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  margin-right: 3px;
+}
+
+#highlighted-post {
+  grid-row: 3 / span 1;
+  grid-column: 3 / span 1;
+}
+
+#highlighted-post .card {
+  max-width: 16rem;
+}
+
+#highlighted-post h2 {
+  text-align: center;
+  color: red;
+  font-size: 45px;
+  font-weight: bold;
+  text-shadow: 3px 2px gray;
+}
+
+#footer {
+  grid-row: 4 / span 1;
+  grid-column: 1 / span 3;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.copyright {
+  align-self: end;
+  color: lightgray;
+  font-size: 20px;
+}
+
+#login-logout {
+  grid-column-start: 3;
+  max-width: 50%;
+  margin-left: 5rem;
+}
+
+#login-modal:not(.open) {
+  display: none;
+}
+#login-modal .open {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  backdrop-filter: blur(6px);
+}

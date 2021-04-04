@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stranger Things</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+      crossorigin="anonymous"
+    ></script>
+    <script defer src="./app.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div id="header">
+      <h2 class="page-title">Stranger's Things</h2>
+      <h4 class="decription">
+        Welcome to our app here you can buy, sell, trade, and more! Feel free to
+        start by looking around today!
+      </h4>
+    </div>
+    <div id="side-nav">
+      <aside>
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#newPostModal"
+        >
+          New Post
+        </button>
+        <button class="btn btn-primary" id="your-posts">Your Post's</button>
+        <button
+          type="button"
+          id="messageButton"
+          class="btn btn-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#messagesModal"
+        >
+          Messages
+        </button>
+      </aside>
+    </div>
+    <div id="featured">
+      <h3 class="post-title">Post's</h3>
+    </div>
+    <div id="search">
+      <input class="search-box" type="text" placeholder="Keyword-search" />
+      <button class="search-submit">GO!</button>
+    </div>
+    <div id="highlighted-post">
+      <h2 style="margin-top: 15px">Hot Post!</h2>
+      <div class="hp-box"></div>
+    </div>
+    <div id="footer">
+      <h3 class="copyright">©BlahBlahBlah</h3>
+      <button type="button" id="login-logout" class="btn btn-primary">
+        Login
+      </button>
+    </div>
+
+    <div
+      class="modal fade"
+      id="newPostModal"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="staticBackdropLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">New Post</h5>
+
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="new-title" class="form-label">Title</label>
+              <input
+                type="text"
+                class="form-control"
+                id="new-title"
+                placeholder="Title Here"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="new_description" class="form-label"
+                >Description</label
+              >
+              <textarea
+                rows="10"
+                class="form-control"
+                id="new-description"
+                placeholder="Description Here"
+              ></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="new-price" class="form-label">Price</label>
+              <input
+                type="text"
+                class="form-control"
+                id="new-price"
+                placeholder="Price Here"
+              />
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="new-deliver"
+              />
+              <label class="form-check-label" for="new-deliver">
+                Will Deliver
+              </label>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cancel
+            </button>
+            <button type="button" id="postSubmit" class="btn btn-primary">
+              Post
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="newMessageModal"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="staticBackdropLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Send A Message</h5>
+
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+
+          <label for="newMessageDescription" class="form-label"
+            >Message Text</label
+          >
+          <textarea
+            rows="10"
+            class="form-control"
+            id="newMessageDescription"
+            placeholder="Description Here"
+          ></textarea>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cancel
+            </button>
+            <button type="button" id="postSubmit" class="btn btn-primary">
+              Send Message
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="editPostModal"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="staticBackdropLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Edit Post</h5>
+
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="edit-title" class="form-label">Title</label>
+              <input
+                type="text"
+                class="form-control"
+                id="edit-title"
+                placeholder="Title Here"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="edit_description" class="form-label"
+                >Description</label
+              >
+              <textarea
+                rows="10"
+                class="form-control"
+                id="edit-description"
+                placeholder="Description Here"
+              ></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="edit-price" class="form-label">Price</label>
+              <input
+                type="text"
+                class="form-control"
+                id="edit-price"
+                placeholder="Price Here"
+              />
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="edit-deliver"
+              />
+              <label class="form-check-label" for="edit-deliver">
+                Will Deliver
+              </label>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cancel
+            </button>
+            <button type="button" id="editSubmit" class="btn btn-primary">
+              Update Post
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="messagesModal"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="staticBackdropLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Messages</h5>
+
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+
+          <div class="messageBody">
+            <button
+              style="margin-left: 20px"
+              type="button"
+              id="inboxMail"
+              class="btn btn-secondary"
+            >
+              Inbox
+            </button>
+            <button type="button" id="allMail" class="btn btn-secondary">
+              All Mail
+            </button>
+            <button type="button" id="sentMail" class="btn btn-secondary">
+              Sent
+            </button>
+          </div>
+          <div class="messageBodyMail"></div>
+
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

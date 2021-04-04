@@ -1,0 +1,77 @@
+#login-form {
+  background-color: skyblue;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  border: 3px solid black;
+  margin-left: 20vw;
+  margin-right: 20vw;
+  margin-top: 30vh;
+  min-height: 250px;
+  max-width: 500px;
+  text-align: center;
+}
+#login-form button {
+  margin-top: 5px;
+  margin-left: 15px;
+  margin-right: 15px;
+  background-color: whitesmoke;
+}
+#login-form .login {
+  margin-bottom: 5px;
+}
+#login-form input {
+  margin-left: 15px;
+  margin-right: 15px;
+  background-color: lightgray;
+}
+body {
+  background-color: lightskyblue;
+  font-family: "Source Code Pro", monospace;
+  display: flex;
+  flex-direction: column;
+}
+.register {
+  margin-top: 5px;
+  max-width: 470px;
+  margin-left: 21.5vw;
+  margin-right: 20vw;
+}
+#reg-modal {
+  visibility: hidden;
+}
+#reg-modal .active {
+  visibility: visible;
+  background-color: lime;
+  z-index: 100;
+  position: fixed;
+  width: 50vw;
+  height: 55vh;
+  top: 25vh;
+  left: 20vw;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow-y: auto;
+}
+#reg-modal h3 {
+  margin-left: 40%;
+  padding-top: 10px;
+}
+#reg-modal input {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 5px;
+}
+#reg-modal button {
+  margin-left: 1rem;
+  margin-bottom: 10px;
+  margin-right: 1rem;
+}
+.error {
+  color: lightgray;
+  font-weight: bold;
+  background-color: red;
+  text-align: center;
+}
